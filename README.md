@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/phillipoertel/outbanker.png?branch=master)](https://travis-ci.org/phillipoertel/outbanker)
+
 # Outbanker
 
 Outbanker reads a CSV file exported from Outbanker/MAC and converts the types to Ruby, as well as doing some cleanups.
