@@ -2,7 +2,7 @@
 
 # Outbanker
 
-Outbanker reads a CSV file exported from "Outbank/MAC":http://www.outbank.de and converts the types to Ruby, as well as doing some cleanups.
+Outbanker reads a CSV file exported from [Outbank/MAC](http://www.outbank.de) and converts the types to Ruby, as well as doing some cleanups.
 
 ## Installation
 
