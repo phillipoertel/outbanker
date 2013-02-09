@@ -1,4 +1,4 @@
-# Outbanker
+# Outbankerer
 
 TODO: Write a gem description
 

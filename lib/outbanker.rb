@@ -1,5 +1,7 @@
-require "outbanker/version"
+require 'minitest/unit'
 
-module Outbanker
-  # Your code goes here...
-end
+require "outbanker/version"
+require "outbanker/money_string_parser"
+require "outbanker/statement_line"
+require "outbanker/statement_lines"
+
