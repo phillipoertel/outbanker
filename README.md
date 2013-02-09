@@ -1,6 +1,6 @@
 # Outbankerer
 
-TODO: Write a gem description
+Outbanker reads a CSV file exported from Outbanker/MAC and converts the types to Ruby, as well as doing some cleanups.
 
 ## Installation
 
@@ -18,7 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    lines = Outbanker::StatementLines.read('outbank.csv')
+    lines.each do |line|
+      puts line.amount
+    end
+
+See the class +StatementLine+ for all available fields.
 
 ## Contributing
 

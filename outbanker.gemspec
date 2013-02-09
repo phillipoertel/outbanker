@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Outbanker::VERSION
   gem.authors       = ["Phillip Oertel"]
   gem.email         = ["me@phillipoertel.com"]
-  gem.description   = %q{very simple wrapper around an Outbanker CSV file}
+  gem.description   = %q{outbanker is Ruby wrapper for Outbank CSV files.}
   gem.summary       = %q{outbanker reads a CSV file exported from Outbanker/MAC and converts the types to Ruby, as well as doing some cleanups.}
   gem.homepage      = ""
 
