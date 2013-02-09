@@ -1,7 +1,5 @@
 require 'test_helper'
 
-require 'ostruct'
-
 class Outbanker::StatementLinesTest < MiniTest::Unit::TestCase
   
   def setup
