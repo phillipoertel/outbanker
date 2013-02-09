@@ -3,7 +3,7 @@ require 'csv'
 module Outbanker
   class StatementLines
   
-    attr_reader :earliest_booking, :latest_booking
+    attr_reader :earliest_booking, :latest_booking, :num_statements
 
     # required for testing only
     attr_reader :csv
@@ -27,10 +27,6 @@ module Outbanker
       @lines.send(method, *args, &block)
     end
     
-    def num_statements
-      @lines.size
-    end
-
     private
     
       def read_csv(file)
