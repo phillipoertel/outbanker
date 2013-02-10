@@ -44,7 +44,7 @@ module Outbanker
     end
     
     def category
-      @row['Kategorie'].empty? ? nil : @row['Kategorie']
+      [nil, ''].include?(@row['Kategorie']) ? nil : @row['Kategorie']
     end
     
     def method_missing(arg)
