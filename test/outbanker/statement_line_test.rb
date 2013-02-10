@@ -21,6 +21,11 @@ class Outbanker::StatementLineTest < MiniTest::Unit::TestCase
     assert_equal "Bankgebühren", line.category
   end
 
+  def test_empty_category_is_returned_as_nil
+    line = @lines[1]
+    assert_equal nil, line.category
+  end
+  
   #
   # Unique Ids
   #

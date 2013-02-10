@@ -43,6 +43,10 @@ module Outbanker
       @row['Verwendungszweck'].gsub(/\s+/, ' ')
     end
     
+    def category
+      @row['Kategorie'].empty? ? nil : @row['Kategorie']
+    end
+    
     def method_missing(arg)
       super unless ATTRIBUTE_MAPPING.keys.include?(arg)
       @row.send(:[], ATTRIBUTE_MAPPING[arg])
