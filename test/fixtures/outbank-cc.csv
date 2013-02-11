@@ -1,0 +1,3 @@
+"Buchungstext";"Währung";"Betrag";"Buchungstag";"Valuta-Datum";"Empfänger/Auftraggeber";"Bankleitzahl";"Kontonummer";"Verwendungszweck";"Vormerkung";"Buchungsschlüssel";"Kommentar";"Kategorie";"PayPal Empfänger/Auftraggeber";"PayPal An E-Mail";"PayPal Von E-Mail";"PayPal Gebühr";"PayPal Transaktionscode";"PayPal Status"
+"Nicht abgerechnet";"EUR";"-105,90";"22.01.2013";"23.01.2013";;;;"Paypal Foo Bar";"Nein";;;"Some category";;;;;;
+"Abgerechnet";"EUR";"-6,84";"19.01.2013";"21.01.2013";;;;"Some service 541-2264551";"Nein";;;"Weiterbildung";;;;;;
