@@ -11,7 +11,6 @@ module Outbanker
     include MoneyStringParser
     
     ATTRIBUTE_MAPPING = {
-      :description2 => "Buchungstext",
       :currency => "Währung",
       :amount => "Betrag",
       :booked_on => "Buchungstag",
@@ -35,12 +34,22 @@ module Outbanker
       Date.parse(@row['Buchungstag'])
     end
     
+    def charged?
+      # in different cases I get either "Abgerechnet" or "" when a line was charged.
+      @row['Buchungstext'] != "Nicht abgerechnet"
+    end
+    
     def valuta_on
       Date.parse(@row['Valuta-Datum'])
     end
     
     def description
       @row['Verwendungszweck'].gsub(/\s+/, ' ')
+    end
+    
+    def payee
+      desc_lines = @row['Verwendungszweck'].split("  ").reject { |row| row =~ /\A\s*\Z/ }.map { |row| row.strip }
+      desc_lines[1] || desc_lines[0] || nil
     end
     
     def category

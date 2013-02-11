@@ -7,9 +7,13 @@ class Outbanker::StatementLineTest < MiniTest::Unit::TestCase
     @lines = Outbanker::StatementLines.read(fixture)
   end
   
+  def setup_cc_fixture
+    fixture = File.join(File.dirname(__FILE__), '../fixtures/outbank-cc.csv')
+    @lines = Outbanker::StatementLines.read(fixture)
+  end
+  
   def test_attribute_mapping_works
     line = @lines[0]
-    assert_equal nil, line.description2
     assert_equal "EUR", line.currency
     assert_equal -1500, line.amount
     assert_equal Date.parse("31.12.2012"), line.booked_on
@@ -53,5 +57,22 @@ class Outbanker::StatementLineTest < MiniTest::Unit::TestCase
     row = @lines.csv.read # get the raw first csv line
     row['Verwendungszweck'] = "#{row['Verwendungszweck']} Bla bla"
     refute_equal Outbanker::StatementLine.new(row), line.unique_id
+  end
+  
+  def test_was_charged_when_empty
+    line = @lines[0]
+    assert_equal true, line.charged?
+  end
+  
+  def test_was_charged_when_filled
+    setup_cc_fixture
+    line = @lines[1]
+    assert_equal true, line.charged?
+  end
+  
+  def test_was_not_charged
+    setup_cc_fixture
+    line = @lines[0]
+    assert_equal false, line.charged?
   end
 end
