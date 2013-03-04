@@ -75,4 +75,14 @@ class Outbanker::StatementLineTest < MiniTest::Unit::TestCase
     line = @lines[0]
     assert_equal false, line.charged?
   end
+  
+  def test_prebooking_false
+    line = @lines[0]
+    assert_equal false, line.prebooking?
+  end
+  
+  def test_prebooking_true
+    line = @lines[2]
+    assert_equal true, line.prebooking?
+  end
 end

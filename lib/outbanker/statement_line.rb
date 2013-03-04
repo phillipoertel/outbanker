@@ -56,6 +56,10 @@ module Outbanker
       [nil, ''].include?(@row['Kategorie']) ? nil : @row['Kategorie']
     end
     
+    def prebooking?
+      @row['Vormerkung'] == 'Ja'
+    end
+    
     def method_missing(arg)
       super unless ATTRIBUTE_MAPPING.keys.include?(arg)
       @row.send(:[], ATTRIBUTE_MAPPING[arg])
