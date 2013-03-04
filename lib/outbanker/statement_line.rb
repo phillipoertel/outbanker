@@ -44,7 +44,7 @@ module Outbanker
     end
     
     def description
-      @row['Verwendungszweck'].gsub(/\s+/, ' ')
+      @row['Verwendungszweck'].to_s.gsub(/\s+/, ' ')
     end
     
     def payee
