@@ -15,7 +15,7 @@ class Outbanker::StatementLineTest < MiniTest::Unit::TestCase
   def test_attribute_mapping_works
     line = @lines[0]
     assert_equal "EUR", line.currency
-    assert_equal -1500, line.amount
+    assert_equal -1542, line.amount
     assert_equal Date.parse("31.12.2012"), line.booked_on
     assert_equal Date.parse("02.01.2013"), line.valuta_on
     assert_equal nil, line.recipient
@@ -35,7 +35,7 @@ class Outbanker::StatementLineTest < MiniTest::Unit::TestCase
   #
   def test_unique_id_exists
     line = @lines[0]
-    assert_equal "40206a5df6a6372c952e2402b96c3f64", line.unique_id
+    assert_equal "218d1ee8478cbb5b697fe77962424817", line.unique_id
   end
 
   def test_unique_id_depends_on_amount
