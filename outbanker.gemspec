@@ -17,5 +17,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
   gem.add_dependency('rake')
-  gem.add_dependency('turn')
+  gem.add_dependency('turn', '0.9.7')
 end
